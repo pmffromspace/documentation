@@ -123,6 +123,8 @@ Changed APIs
 - Calling ``OCP\Notification\INotification::setLink()`` with a relative URL is deprecated and will throw ``OCP\Notification\InvalidValueException`` in a future version.
 - Calling ``OCP\Notification\INotification::setIcon()`` with a relative URL is deprecated and will throw ``OCP\Notification\InvalidValueException`` in a future version.
 - ``OCP\Notification\INotifier::prepare()`` should no longer throw ``\InvalidArgumentException``. ``OCP\Notification\UnknownNotificationException`` should be thrown when the notifier does not want to handle the notification. ``\InvalidArgumentException`` are logged as debug for now and will be logged as error in the future to help developers find issues from code that unintentionally threw ``\InvalidArgumentException``
+- ``OCP\Share\IShare::setNoExpirationDate()`` now sets an overwrite flag for falsy expiry date values, this flag is used to determine whether the system should overwrite falsy expiry date values before creating a share.
+- ``OCP\Share\IShare::getNoExpirationDate()`` retrieves the value of the ``noExpirationDate`` flag.
 
 Deprecated APIs
 ^^^^^^^^^^^^^^^
